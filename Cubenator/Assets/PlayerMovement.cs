@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float forwardForce = 400f;
     [SerializeField]
-    private float sidewaysForce = 400f;
+    private float sidewaysForce = 100f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +23,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            rigidBody.AddForce(sidewaysForce*Time.deltaTime,0,0);           
+            rigidBody.AddForce(sidewaysForce*Time.deltaTime,0,0, ForceMode.VelocityChange);           
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rigidBody.AddForce(-sidewaysForce*Time.deltaTime,0,0);           
+            rigidBody.AddForce(-sidewaysForce*Time.deltaTime,0,0,ForceMode.VelocityChange);           
         }
     }
 }
