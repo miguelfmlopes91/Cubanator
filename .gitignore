@@ -72,3 +72,5 @@ Cubenator/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
 Cubenator/Library/StateCache/Hierarchy/626135-mainStage.json
 Cubenator/Library/ScriptAssemblies/Assembly-CSharp.dll
 Cubenator/Library/assetDatabase3
+Cubenator/Temp/UnityLockfile
+*.log
