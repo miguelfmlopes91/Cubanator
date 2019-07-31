@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         rigidBody.AddForce(0,0,forwardForce * Time.deltaTime);
 
@@ -28,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             rigidBody.AddForce(-sidewaysForce*Time.deltaTime,0,0,ForceMode.VelocityChange);           
+        }
+        if (rigidBody.position.y < -1)
+        {
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }
