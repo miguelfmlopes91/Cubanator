@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private float transition = 1f;
+
+    public GameObject completeLevelUI;
     bool gameHasEnded;
    public void EndGame(){
        if (gameHasEnded == false)
@@ -21,5 +23,10 @@ public class GameManager : MonoBehaviour
     private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void CompleteLevel(){
+        Debug.Log("Completed level");
+        completeLevelUI.SetActive(true);
     }
 }
